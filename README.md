@@ -8,8 +8,8 @@ An angular application that uses Bootstrap (with Darkly theme) and the Discogs A
 
 ![Search](http://philvr.com/Projects/MusicApp/search.png)
 
-![Artist](http://philvr.com/Projects/MusicApp/artist.png)
-
 ![Album](http://philvr.com/Projects/MusicApp/album.png)
+
+![Artist](http://philvr.com/Projects/MusicApp/artist.png)
 
 ![Releases](http://philvr.com/Projects/MusicApp/releases.png)
