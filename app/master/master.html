@@ -1,0 +1,38 @@
+<div class="text-center center-block">
+    <div class="jumbotron">
+        <h3 class="text-primary"><b><u><span ng-repeat="a in info.artists">{{a.name}}</span> - {{info.title}}</u></b></h3>
+        <img src={{info.images[0].uri}} alt="{{info.name}}" height="300px" class="center-block">
+    </div>
+    <a href="{{info.uri}}" class="btn btn-default btn-sm">View on Discogs</a>
+    <br><br>
+
+    <div class="container-fluid text-left center-block">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">Info</div>
+                            <div class="panel-body">
+                                <p>Year: {{info.year}}</p>
+                                <p>Genres: <span ng-repeat="x in info.genres">{{x}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Tracklist</div>
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item" ng-repeat="x in info.tracklist">
+                                        <p>{{x.position}}. {{x.title}}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

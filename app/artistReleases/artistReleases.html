@@ -1,0 +1,55 @@
+<div class="center-block text-center">
+    <div class="d-inline d-inline-block">
+        <label>Sort By: </label>
+        <label class="radio-inline">
+            <input ng-change="sortBy()" type="radio" value="year" name="sortOption" ng-model="sort">Year
+        </label>
+        <label class="radio-inline">
+            <input ng-change="sortBy()" type="radio" value="title" name="sortOption" ng-model="sort">Title
+        </label>
+        <label class="radio-inline">
+            <input ng-change="sortBy()" type="radio" value="format" name="sortOption" ng-model="sort">Format
+        </label>
+        <label class="checkbox-inline">
+            <input ng-change="sortBy()" type="checkbox" ng-true-value="'asc'" ng-false-value="'desc'" ng-model="sortOrder">Asc
+        </label>
+    </div>
+
+    <ul class="pagination pagination-sm">
+        <li  ng-repeat-start="n in pages" class="active" ng-if="n === info.pagination.page">
+            <a href="">{{n}}</a>
+        </li>
+        <li ng-repeat-end ng-if="n !== info.pagination.page">
+            <a ng-click="goToPage(n)" href="">{{n}}</a>
+        </li>
+    </ul>
+</div>
+<div ng-if="loading" class=" center-block loader"></div>
+
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="x in info.releases">
+        <div class="media">
+            <div class="media-left">
+                <a href="{{x.resource_url}}">
+                    <img width="150px" class="media-object" src={{x.thumb}} alt="{{x.title}}">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading text-primary">{{x.title}}</h4>
+                <p class="text-muted">Type: {{x.type}}</p>
+                <button ng-click="moreInfo(x.id, x.type)" class="btn btn-primary btn-sm">More Info</button>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<div class="center-block text-center">
+    <ul class="pagination pagination-sm">
+        <li ng-repeat-start="n in pages" class="active" ng-if="n === info.pagination.page">
+            <a href="">{{n}}</a>
+        </li>
+        <li ng-repeat-end ng-if="n !== info.pagination.page">
+            <a ng-click="goToPage(n)" href="">{{n}}</a>
+        </li>
+    </ul>
+</div>

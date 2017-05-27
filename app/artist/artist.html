@@ -1,0 +1,52 @@
+<div class="text-center center-block">
+    <div class="jumbotron">
+        <h3 class="text-primary"><b><u>{{info.name}}</u></b></h3>
+        <img src={{info.images[0].uri}} alt="{{info.name}}" height="300px" class="img-rounded">
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="{{info.uri}}" class="btn btn-success btn-sm">View on Discogs</a>
+        <button ng-click="getReleases(info.releases_url)" class="btn btn-primary btn-sm">
+            View Releases
+        </button>
+    </div>
+    <br><br>
+    <div class="container-fluid text-left center-block">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">Members</div>
+                            <div class="panel-body">
+                                <span ng-repeat="m in info.members">
+                                    <p ng-if="m.active">{{m.name}}</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Profile</div>
+                            <div class="panel-body">
+                                <p>{{info.profile}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Links</div>
+                            <div class="panel-body">
+                                <span ng-repeat="u in info.urls">
+                                    <a href="{{u}}">{{u}}</a>
+                                    <br>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
