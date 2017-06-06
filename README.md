@@ -1,5 +1,5 @@
 # MusicApp-Discogs
-An angular application that uses Bootstrap (with Darkly theme) and the Discogs API. Requires your own API key and secret from Discogs.
+An angular application that uses Bootstrap (w/ Darkly theme) and the Discogs API. Requires your own API key and secret from Discogs.
 
 * [Angular](https://angularjs.org/)
 * [jQuery](https://jquery.com/)
